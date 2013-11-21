@@ -1,0 +1,22 @@
+<h1> <a href ="<%= root_path %>">Welcoem to Retflix!</a></h1>
+
+<a href = "<%= new_movie_path %>">+Add a Movie</a>
+
+<% form_tag "/", :method => :get do %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Find Movies" %>
+<% end %>
+
+<ul>
+	<% @movies.each do |movie| %>
+	<li>
+		<h2><%= movie.title %></h2>
+		,p.
+		<%= movie.description %>
+		</p>
+		<p>
+		<%= movie.year_released %>
+		</p>
+	</li>
+<%end%>
+</ul>
